@@ -7,9 +7,9 @@ import {
   Link,
   Text,
   useColorModeValue,
+  Img
 } from "@chakra-ui/react";
 import {
-  CreativeTimLogo,
   DocumentIcon,
   HomeIcon,
   PersonIcon,
@@ -20,6 +20,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import routes from "routes.js";
+import KT_ci from "assets/img/kt_ci.png";
+import KT_ci_dark from "assets/img/kt_ci_dark.png";
 export default function AuthNavbar(props) {
   const [open, setOpen] = React.useState(false);
   const handleDrawerToggle = () => {
@@ -68,6 +70,12 @@ export default function AuthNavbar(props) {
     mainText = "white";
     navbarPosition = "absolute";
   }
+
+  // Logo image path based on color mode
+  // const logoImage = colorMode === "light" ? KT_ci : KT_ci_dark;
+  // const height = colorMode === "light" ? 50 : 30;
+  // const width = colorMode === "light" ? 50 : 30;
+
   var brand = (
     <Link
       href={`${process.env.PUBLIC_URL}/#/`}
@@ -79,7 +87,9 @@ export default function AuthNavbar(props) {
       alignItems="center"
       color={mainText}
     >
-      <CreativeTimLogo w="32px" h="32px" me="10px" />
+      {/* <CreativeTimLogo w="32px" h="32px" me="10px" /> */}
+      {/* KT_ci 이미지 컴포넌트*/}
+      <Img src={KT_ci} height={50} width={50} marginRight={3}/>
       <Text fontSize="sm" mt="3px">
         {logoText}
       </Text>

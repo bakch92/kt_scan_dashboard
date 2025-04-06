@@ -8,7 +8,14 @@ class LineChart extends React.Component {
 
     this.state = {
       chartData: [],
-      chartOptions: {},
+      chartOptions: {
+        chart: {
+          id: "basic-bar",
+        },
+        xaxis: {
+          categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        },
+      },
     };
   }
 

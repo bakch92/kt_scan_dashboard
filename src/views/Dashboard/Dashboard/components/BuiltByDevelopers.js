@@ -15,7 +15,7 @@ import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 
 const BuiltByDevelopers = ({ title, name, description, image }) => {
-  const textColor = useColorModeValue("gray.700", "white");
+  const textColor = useColorModeValue("gray.00", "white");
 
   return (
     <Card minHeight='290.5px' p='1.2rem'>
@@ -26,13 +26,13 @@ const BuiltByDevelopers = ({ title, name, description, image }) => {
             h='100%'
             lineHeight='1.6'
             width={{ lg: "45%" }}>
-            <Text fontSize='sm' color='gray.400' fontWeight='bold'>
+            <Text fontSize='sm' color='gray.500' fontWeight='bold'>
               {title}
             </Text>
             <Text fontSize='lg' color={textColor} fontWeight='bold' pb='.5rem'>
               {name}
             </Text>
-            <Text fontSize='sm' color='gray.400' fontWeight='normal'>
+            <Text fontSize='sm' color='gray.500' fontWeight='normal'>
               {description}
             </Text>
             <Spacer />
@@ -50,7 +50,7 @@ const BuiltByDevelopers = ({ title, name, description, image }) => {
                   transition='all .5s ease'
                   my={{ sm: "1.5rem", lg: "0px" }}
                   _hover={{ me: "4px" }}>
-                  Read more
+                  더보기
                 </Text>
                 <Icon
                   as={BsArrowRight}

@@ -130,7 +130,7 @@ export default function Configurator(props) {
                   Dark/Light
                 </Text>
                 <Button onClick={toggleColorMode}>
-                  Toggle {colorMode === "light" ? "Dark" : "Light"}
+                  {colorMode === "light" ? "Dark" : "Light"}
                 </Button>
               </Flex>
 

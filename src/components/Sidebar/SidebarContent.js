@@ -3,12 +3,16 @@
 import {
     Box,
     Button, Flex,
+    Img,
     Link,
     Stack,
     Text,
+    useColorMode,
     useColorModeValue
 } from "@chakra-ui/react";
 import IconBox from "components/Icons/IconBox";
+import KT_ci from "assets/img/kt_ci.png";
+import KT_ci_dark from "assets/img/kt_ci_dark.png";
 import { CreativeTimLogo } from "components/Icons/Icons";
 import { Separator } from "components/Separator/Separator";
 import { SidebarHelp } from "components/Sidebar/SidebarHelp";
@@ -24,6 +28,7 @@ const SidebarContent = ({ logoText, routes }) => {
   let location = useLocation();
   // this is for the rest of the collapses
   const [state, setState] = React.useState({});
+  const { colorMode } = useColorMode();
 
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
@@ -176,12 +181,16 @@ const SidebarContent = ({ logoText, routes }) => {
 
     const links = <>{createLinks(routes)}</>;
 
+  // Logo image path based on color mode
+  const logoImage = colorMode === "light" ? KT_ci : KT_ci_dark;
+  const height = colorMode === "light" ? 50 : 30;
+  const width = colorMode === "light" ? 50 : 30;
+
   return (
     <>
         <Box pt={"25px"} mb="12px">
       <Link
         href={`${process.env.PUBLIC_URL}/#/`}
-        target="_blank"
         display="flex"
         lineHeight="100%"
         mb="30px"
@@ -190,14 +199,16 @@ const SidebarContent = ({ logoText, routes }) => {
         alignItems="center"
         fontSize="11px"
       >
-        <CreativeTimLogo w="32px" h="32px" me="10px" />
-        <Text fontSize="sm" mt="3px">
+        {/* <CreativeTimLogo w="32px" h="32px" me="10px" /> */}
+        {/* KT_ci 이미지 컴포넌트*/}
+        <Img src={logoImage} height={height} width={width} marginRight={3}/>
+        <Text fontSize="sm" mt="5px">
           {logoText}
         </Text>
       </Link>
       <Separator></Separator>
     </Box>
-          <Stack direction="column" mb="40px">
+          <Stack direction="column" mb="20px">
             <Box>{links}</Box>
           </Stack>
           <SidebarHelp />

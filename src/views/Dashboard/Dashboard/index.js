@@ -33,7 +33,7 @@ export default function Dashboard() {
 
   return (
     <Flex flexDirection='column' pt={{ base: "120px", md: "75px" }}>
-      <SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
+      {/* <SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
         <MiniStatistics
           title={"Today's Moneys"}
           amount={"$53,000"}
@@ -58,22 +58,24 @@ export default function Dashboard() {
           percentage={8}
           icon={<CartIcon h={"24px"} w={"24px"} color={iconBoxInside} />}
         />
-      </SimpleGrid>
-      <Grid
+      </SimpleGrid> */}
+      {/* <Grid
         templateColumns={{ md: "1fr", lg: "1.8fr 1.2fr" }}
         templateRows={{ md: "1fr auto", lg: "1fr" }}
         my='26px'
         gap='24px'>
         <BuiltByDevelopers
-          title={"Built by Developers"}
-          name={"Purity UI Dashboard"}
+          title={"KT Sahdow-IT 대시보드"}
+          name={"개발중"}
           description={
-            "From colors, cards, typography to complex elements, you will find the full documentation."
+            "Shdaow-IT 서비스 설명"
           }
           image={
             <Image
-              src={logoChakra}
-              alt='chakra image'
+              src="images/kt_slogun.jpeg"
+              alt='kt_slogun'
+              width={500}
+              height={185}
               minWidth={{ md: "300px", lg: "auto" }}
             />
           }
@@ -85,22 +87,12 @@ export default function Dashboard() {
             "Wealth creation is a revolutionary recent positive-sum game. It is all about who takes the opportunity first."
           }
         />
+      </Grid> */}
+      <Grid>
+        <BarChart />
       </Grid>
-      <Grid
-        templateColumns={{ sm: "1fr", lg: "1.3fr 1.7fr" }}
-        templateRows={{ sm: "repeat(2, 1fr)", lg: "1fr" }}
-        gap='24px'
-        mb={{ lg: "26px" }}>
-        <ActiveUsers
-          title={"Active Users"}
-          percentage={23}
-          chart={<BarChart />}
-        />
-        <SalesOverview
-          title={"Sales Overview"}
-          percentage={5}
-          chart={<LineChart />}
-        />
+      <Grid>
+        <LineChart />
       </Grid>
       <Grid
         templateColumns={{ sm: "1fr", md: "1fr 1fr", lg: "2fr 1fr" }}
